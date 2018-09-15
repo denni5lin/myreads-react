@@ -9,20 +9,26 @@ class BooksApp extends React.Component {
     books: []
   }
 
-
+  /*
+  getAll() method:
+  Returns a promise which resolves to a JSON 
+  object containing a collection of books. 
+  This collection represents the books currently
+  in the bookshelves in your app.
+  */
+  getBooks() {
+    BooksAPI.getAll().then((books) => {
+      this.setState({ books })
+    })
+  }
 
   componentDidMount() {
-    BooksAPI.getAll().then((books) => {
-      this.setState({ books: books })
-    }) 
+    this.getBooks()
   }
 
   moveShelf = (book, shelf) => {
-    BooksAPI.update(book, shelf);
-    
-    BooksAPI.getAll().then((books) => {
-      this.setState({ books: books })
-    }) 
+    BooksAPI.update(book, shelf);  
+    this.getBooks()
   }
 
   render() {
