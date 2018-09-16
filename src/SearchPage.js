@@ -52,7 +52,13 @@ class SearchPage extends Component {
               	{
 	          		this.state.searchedBooks.map(searchedBook => {
 	          			// Set default to 'none' if book hasn't been assigned
-	          			let shelf = 'none'	          			
+	          			let shelf = 'none'
+
+	          			this.props.books.map(book => (
+	          				book.id === searchedBook.id ? 
+	          				shelf = book.shelf : ''
+          				))
+
 	          			return (
 		          			<li key={searchedBook.id}>
 		          				<Book
