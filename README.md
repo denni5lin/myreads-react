@@ -7,8 +7,8 @@
 
 ## Launch the project
 
-* install all project dependencies with `npm install`
-* start the development server with `npm start`
+* Install all project dependencies with `npm install`
+* Start the development server with `npm start`
 
 ## Backend Server
 

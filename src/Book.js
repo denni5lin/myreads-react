@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 
 class Book extends Component {
 	render() {
-		// Check if the book actually includes a thumbnail
+		// Check if book includes a thumbnail
 		let displayedThumbnail = this.props.book.imageLinks ? this.props.book.imageLinks.thumbnail : '';
-
 		return (
 	        <div className="book">
 	          <div className="book-top">
